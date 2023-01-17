@@ -1,0 +1,15 @@
+// 模板代码示意，router.config.template.ejs
+import { RouteConfig } from 'vue-router';
+
+<% chooseModules.forEach(function(item){%>
+import <%=item %> from '<%=deelRouteName(item) %>';
+<% }) %>
+let routesConfig: Array<RouteConfig> = [];
+/* eslint-disable */
+  routesConfig = [
+    <% chooseModules.forEach(function(item){%>
+      <%=item %>,
+    <% }) %>
+  ]
+
+export default routesConfig;
